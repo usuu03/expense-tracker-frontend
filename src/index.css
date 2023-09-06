@@ -48,8 +48,8 @@ header a {
   background: #fff;
   border-radius: 4px;
   margin: 20px auto;
-  padding: 20px;
-  position: relative;
+  padding: 10px;
+  /*sposition: relative; */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
@@ -59,11 +59,8 @@ header a {
   color: var(--primary);
 }
 
-.expense-details h7 {
-  margin: 0 0 0 10px;
-  font-size: 1.2em;
-  color: var(--primary);
-}
+
+
 
 
 .expense-details p {

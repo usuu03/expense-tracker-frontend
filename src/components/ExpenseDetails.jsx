@@ -1,12 +1,14 @@
 const ExpenseDetails = ({ expense }) => {
   return (
     <div className="expense-details">
-      <h4>{expense.title}</h4>
-
-      <h7>{expense.category}</h7>
+      <div className="heading">
+        <h4>
+          {expense.title} - {expense.category}
+        </h4>
+      </div>
 
       <strong>
-        <p>£{expense.amount}</p>
+        <h6>£{expense.amount}</h6>
       </strong>
       <p>{expense.date}</p>
     </div>
