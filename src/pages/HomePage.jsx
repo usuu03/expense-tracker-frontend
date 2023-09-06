@@ -18,6 +18,10 @@ const HomePage = () => {
     fetchExpenses();
   }, []);
 
+  addExpense(){
+    
+  }
+
   return (
     <div className="home">
       <button className="btn btn-warning">Add Expense</button>
