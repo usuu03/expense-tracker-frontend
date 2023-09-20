@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import ExpenseDetails from "../components/ExpenseDetails";
 
@@ -18,13 +19,30 @@ const HomePage = () => {
     fetchExpenses();
   }, []);
 
+  const onDelete = (expenseId) => {
+    // Create a new array of expenses without the one to be deleted
+    const updatedExpenses = expenses.filter(
+      (expense) => expense.id !== expenseId
+    );
+
+    // Update the expenses state with the new array
+    setExpenses(updatedExpenses);
+  };
+
   return (
     <div className="home">
-      <button className="btn btn-warning">Add Expense</button>
+      {/* <button className="btn btn-warning">Add Expense</button> */}
+      <Link to="/add-expense" className="btn btn-warning">
+        Add Expense
+      </Link>
       <div className="expenses">
         {expenses &&
           expenses.map((expense) => (
-            <ExpenseDetails key={expense.id} expense={expense} />
+            <ExpenseDetails
+              key={expense.id}
+              expense={expense}
+              onDelete={() => onDelete(expense.id)}
+            />
           ))}
       </div>
     </div>
